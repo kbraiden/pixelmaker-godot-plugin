@@ -29,6 +29,7 @@ func _enter_tree() -> void:
 	add_tool_menu_item(PLUGIN_NAME + ": Start Server",  Callable(self, "_start_server"))
 	add_tool_menu_item(PLUGIN_NAME + ": Stop Server",   Callable(self, "_stop_server"))
 	add_tool_menu_item(PLUGIN_NAME + ": Open Web UI",   Callable(self, "_open_web_ui"))
+	add_tool_menu_item(PLUGIN_NAME + ": Get Python 3.10+", Callable(self, "_open_python_download"))
 
 	_start_server()
 
@@ -37,6 +38,7 @@ func _exit_tree() -> void:
 	remove_tool_menu_item(PLUGIN_NAME + ": Start Server")
 	remove_tool_menu_item(PLUGIN_NAME + ": Stop Server")
 	remove_tool_menu_item(PLUGIN_NAME + ": Open Web UI")
+	remove_tool_menu_item(PLUGIN_NAME + ": Get Python 3.10+")
 
 	if is_instance_valid(_dock):
 		remove_control_from_docks(_dock)
@@ -57,10 +59,9 @@ func _start_server() -> void:
 
 	var python := _find_python()
 	if python.is_empty():
-		push_error(
-			"[PixelMaker] Python 3.10+ not found in PATH. " +
-			"Install Python and re-enable the plugin."
-		)
+		push_error("[PixelMaker] Python 3.10+ not found. Install from python.org.")
+		if is_instance_valid(_dock) and _dock.has_method("notify_python_missing"):
+			_dock.notify_python_missing()
 		return
 
 	var launcher := ProjectSettings.globalize_path(
@@ -93,6 +94,10 @@ func _open_web_ui() -> void:
 	OS.shell_open("http://127.0.0.1:%d" % SERVER_PORT)
 
 
+func _open_python_download() -> void:
+	OS.shell_open("https://www.python.org/downloads/")
+
+
 func get_server_pid() -> int:
 	return _server_pid
 
@@ -112,7 +117,14 @@ func _find_python() -> String:
 		var output: Array = []
 		var code := OS.execute(candidate, ["--version"], output, true, false)
 		if code == 0:
-			return candidate
+			# Validate 3.10+ — reject Python 2 or old 3.x
+			var ver: String = (output[0] if output.size() > 0 else "").strip_edges()
+			var nums := ver.trim_prefix("Python ").split(".")
+			if nums.size() >= 2:
+				var major := int(nums[0])
+				var minor := int(nums[1])
+				if major > 3 or (major == 3 and minor >= 10):
+					return candidate
 
 	# Fallback: common install paths on Windows
 	if OS.get_name() == "Windows":

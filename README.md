@@ -12,16 +12,7 @@ The standalone web version lives at
 
 ## Screenshots
 
-> Drop your Godot editor screenshots into the `screenshots/` folder and
-> update the paths below.
-
-| Sprite tab | Background tab |
-|---|---|
-| _screenshot coming soon_ | _screenshot coming soon_ |
-
-| Animate tab | Isometric tab |
-|---|---|
-| _screenshot coming soon_ | _screenshot coming soon_ |
+![PixelMaker dock — Sprite tab showing a generated blue wizard](screenshots/Screenshot_1.png)
 
 ---
 

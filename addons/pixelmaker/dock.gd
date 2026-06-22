@@ -143,6 +143,29 @@ func schedule_status_check() -> void:
 	get_tree().create_timer(4.0).timeout.connect(_check_server_status)
 
 
+## Called by plugin.gd when Python 3.10+ is not found on this machine.
+func notify_python_missing() -> void:
+	_status_lbl.text = "● Python 3.10+ not found"
+	_log_msg(
+		"Python 3.10 or newer is required to run the AI server.\n\n" +
+		"Install steps:\n" +
+		"  1. Click the button below (or use Tools \u2192 PixelMaker: Get Python 3.10+)\n" +
+		"  2. Download the latest Python 3 installer\n" +
+		"  3. Run the installer — tick 'Add Python to PATH'\n" +
+		"  4. Restart Godot\n\n" +
+		"Without Python the plugin loads, but generation buttons won't work.\n" +
+		"The Image\u2192Pixel (pixelate) tab works fully offline."
+	)
+	# Surface a one-time Get-Python button in the log row
+	if _log_lbl.get_parent().find_child("GetPythonBtn", false, false) == null:
+		var btn := Button.new()
+		btn.name      = "GetPythonBtn"
+		btn.text      = "Get Python \u2192 python.org"
+		btn.flat      = false
+		btn.pressed.connect(func(): OS.shell_open("https://www.python.org/downloads/"))
+		_log_lbl.get_parent().add_child(btn)
+
+
 # =============================================================================
 # UI construction helpers
 # =============================================================================
