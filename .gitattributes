@@ -1,0 +1,9 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Only include the addons folder when downloading from the Asset Library.
+# Everything else (screenshots, docs, README, .gitignore etc.) is stripped
+# from the ZIP that end-users receive.
+/**           export-ignore
+/addons       !export-ignore
+/addons/**    !export-ignore
