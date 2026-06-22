@@ -1,0 +1,23 @@
+# Godot editor data
+.godot/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Environment / secrets — NEVER commit these
+.env
+*.env
+.env.*
+
+# Distribution artefact (built from source; not needed in the repo)
+pixelmaker-godot-plugin.zip
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

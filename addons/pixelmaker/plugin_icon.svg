@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- pixel art palette icon -->
+  <!-- background square -->
+  <rect x="1" y="1" width="14" height="14" rx="2" fill="#1e1e2e"/>
+  <!-- pixel grid dots (retro look) -->
+  <rect x="3" y="3" width="2" height="2" fill="#ff6b6b"/>
+  <rect x="6" y="3" width="2" height="2" fill="#ffd93d"/>
+  <rect x="9" y="3" width="2" height="2" fill="#6bcb77"/>
+  <rect x="12" y="3" width="2" height="2" fill="#4d96ff"/>
+  <rect x="3" y="6" width="2" height="2" fill="#4d96ff"/>
+  <rect x="6" y="6" width="2" height="2" fill="#ff6b6b"/>
+  <rect x="9" y="6" width="2" height="2" fill="#ffd93d"/>
+  <rect x="12" y="6" width="2" height="2" fill="#6bcb77"/>
+  <rect x="3" y="9" width="2" height="2" fill="#6bcb77"/>
+  <rect x="6" y="9" width="2" height="2" fill="#4d96ff"/>
+  <rect x="9" y="9" width="2" height="2" fill="#ff6b6b"/>
+  <rect x="12" y="9" width="2" height="2" fill="#ffd93d"/>
+  <rect x="3" y="12" width="2" height="2" fill="#ffd93d"/>
+  <rect x="6" y="12" width="2" height="2" fill="#6bcb77"/>
+  <rect x="9" y="12" width="2" height="2" fill="#4d96ff"/>
+  <rect x="12" y="12" width="2" height="2" fill="#ff6b6b"/>
+</svg>
