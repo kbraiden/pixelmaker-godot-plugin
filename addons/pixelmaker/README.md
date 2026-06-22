@@ -1,5 +1,12 @@
 # PixelMaker — Godot 4 Editor Plugin
 
+> **A tool for placeholder and prototype art.** PixelMaker is intended to help
+> you block out ideas and keep your project moving while it's in development —
+> not to replace a real artist. A professional pixel artist will produce work
+> that is incomparably better: more expressive, more consistent, and built with
+> an understanding of your game's visual identity that no prompt can capture.
+> If your project is headed anywhere serious, hire one.
+
 Generate pixel art sprites, backgrounds, walk-cycle animations, and isometric
 tilesets directly inside the Godot editor. AI generation via OpenAI (API key
 required); image conversion and animation work fully offline. Includes a
