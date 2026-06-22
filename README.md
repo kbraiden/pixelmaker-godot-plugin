@@ -12,13 +12,16 @@ The standalone web version lives at
 
 ## Screenshots
 
+> Drop your Godot editor screenshots into the `screenshots/` folder and
+> update the paths below.
+
 | Sprite tab | Background tab |
 |---|---|
-| ![Sprite tab](screenshots/sprite-tab.png) | ![Background tab](screenshots/background-tab.png) |
+| _screenshot coming soon_ | _screenshot coming soon_ |
 
 | Animate tab | Isometric tab |
 |---|---|
-| ![Animate tab](screenshots/animate-tab.png) | ![Isometric tab](screenshots/iso-tab.png) |
+| _screenshot coming soon_ | _screenshot coming soon_ |
 
 ---
 
